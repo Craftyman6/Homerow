@@ -111,9 +111,9 @@ function circLine(x, y, r, c)
 	love.graphics.circle("line", x, y, r)
 end
 
-function img(img, x, y)
+function img(img, x, y, r, s)
 	love.graphics.setColor({1,1,1})
-	love.graphics.draw(img, x, y)
+	love.graphics.draw(img, x, y, r, s)
 end
 
 function color(c1, c2, c3)

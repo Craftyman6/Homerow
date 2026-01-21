@@ -28,7 +28,10 @@ background = {
 		table.remove(options, background.color)
 		background.color = get_random_value(options)
 	end,
-	stencil = function()
+	screenStencil = function()
+		love.graphics.rectangle("fill", 0, 0, 525, 720)
+	end,
+	monitorStencil = function()
 		love.graphics.rectangle("fill", monitor.x, monitor.y, monitor.w, monitor.h)
 	end,
 	update = function(dt)
@@ -43,8 +46,9 @@ background = {
 		end
 	end,
 	draw = function()
-		love.graphics.stencil(background.stencil, "replace", 1)
-		love.graphics.setStencilTest("less", 1)
+		love.graphics.stencil(background.screenStencil, "replace", 1)
+		love.graphics.stencil(background.monitorStencil, "replace", 2, true)
+		love.graphics.setStencilTest("equal", 1)
 		local dispY = -background.time % background.h * 3
 		for i = 1, 12 do
 			local y = i*background.h + dispY - 570
@@ -56,6 +60,7 @@ background = {
 				526, y + background.rightH
 			)
 		end
+
 		love.graphics.setStencilTest()
 	end
 }

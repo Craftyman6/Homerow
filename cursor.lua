@@ -28,12 +28,15 @@ cursor = {
 		-- Don't even run if idiot is active or final word is scoring
 		if idiot.active or monitor.screen.at.noCursor then cursor.buttonTime = 0 return end
 
+		-- Update cursor coordinates
+		cursor.x, cursor.y = love.mouse.getPosition()
+		
+		cursor.x = cursor.x / windowS
+		cursor.y = cursor.y / windowS
+		
 		-- Update sprite
 		cursor.sprite = cursor.attemptMonitorClick(false) and cursor.sprites.click or cursor.sprites.point
 		if app.round == 8 and app.boss == 4 then cursor.sprite = cursor.sprites.load end
-
-		-- Update cursor coordinates
-		cursor.x, cursor.y = love.mouse.getPosition()
 
 		-- Hold key if holding click and cursor escaped hovered key's hitbox
 		if cursor.hoveredObj ~= nil and keyboard.attemptDrag(cursor.x, cursor.y) ~= cursor.hoveredObj and love.mouse.isDown(1) and cursor.buttonTime < cursor.buttonPressTime then

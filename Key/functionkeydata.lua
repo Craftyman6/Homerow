@@ -307,7 +307,7 @@ functionKeyData = {
 	-- 18: FN
 	{
 		name = "FN ",
-		desc = "Creates a copy of its closest function key (copies right key if touching two)",
+		desc = "Creates a copy of its closest function key (copies left key if touching two)",
 		w = 50,
 		h = 50,
 		cost = fnEscCost,

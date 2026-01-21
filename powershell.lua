@@ -71,6 +71,6 @@ creditsCenter("middleclass | moonshine | TESound | deostroll's dictionary.txt | 
 creditsCenter("Inspirations",".")..
 creditsCenter("Balatro | OMG Words | Microsoft Windows XP"," ")..
 creditsCenter("Playtesting",".")..
-creditsCenter("RaidenPAX"," ")
+creditsCenter("RaidenPAX | Cheerbs | AubreyBrace"," ")
 
 return powershell

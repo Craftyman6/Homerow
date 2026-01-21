@@ -51,7 +51,7 @@ app = {
 			value = 50,
 			disValue = 0,
 			col = {.1,.5,.1},
-			desc = "That's your teel! Get your purp greater than this before running out of words to stay in the game.", 
+			desc = "That's your teel! Get your purp greater than this before the round ends to stay in the game.", 
 			crumbs = {},
 			timeSinceLastCrumb = 0
 		}
@@ -155,12 +155,12 @@ app = {
 			titleBarButton.img = app.titleBarImgs[i+1]
 			titleBarButton.onHover = ({
 				"WARNING! Homerow saves after every round. Reopening will bring you to the start of your last completed round",
-				"",
-				""
+				"This changes the size of the game window. Cycle through the sizes to see which size suits your computer best!",
+				"Click this to show the credits!"
 			})[i]
 			titleBarButton.onClick = ({
 				function() if app.introDia then return end love.event.quit() end,
-				function() if app.introDia then return end message.say("is the window not already maximized?", "idiot", false) end,
+				function() if app.introDia then return end changeWindowS() end,
 				function() monitor.screen.at = powershell powershell.begin() end
 			})[i]
 		end
@@ -390,7 +390,7 @@ app = {
 
 		-- UTILITY TAB
 		-- Round clickable
-		cursor.addMonitorClickable(app.x + 10, app.y + 72, 80, 23, "It's round "..app.round.."! The round ends when you run out of words to play. You'll need to have more purp than teel (top right) to move onto the next one. When you do, all letter keys go back to the bag and the shop gets restocked", function() end)
+		cursor.addMonitorClickable(app.x + 10, app.y + 72, 80, 23, "It's round "..app.round.." out of 8! The round ends when you run out of words to play. You'll need to have more purp than teel (top right) to move onto the next one. When you do, all letter keys go back to the bag and the shop gets restocked", function() end)
 		-- Words clickable
 		cursor.addMonitorClickable(app.x + 10, app.y + 102, 80, 23, "You have "..app.words.." words to play before the round ends. This includes both correct and incorrect words. A word doesn't have to score for it to be used, so be careful!", function() end)
 		-- Exchange clickables
@@ -421,7 +421,7 @@ app = {
 			else
 				message.say("Woah! The shop's been stocked! There, you can buy keys to help you in your run! There are two types, \"function\" keys, which are consumed when pressed, and \"special\" keys, that do special things if conditions are met as you press them! Try buying a key now!", "clippy", false)
 			end
-		elseif app.round == 1 and app.words == 4 and app.time < 4 then
+		elseif app.round == 1 and app.words == 4 and app.time > .5 and app.time < 4 then
 			local speakerID = math.floor(app.time / 3) + 1
 			message.say(welcomeMessages[app.welcome][speakerID], speakerID == 1 and "clippy" or "idiot", false)
 		end

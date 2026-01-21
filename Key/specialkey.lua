@@ -33,7 +33,7 @@ end
 
 function SpecialKey:update(dt)
 	if self.sold then shop.giveMoney(math.max(0, math.floor(self.cost/2))) return true end
-	self.desc = self:getDesc(self.blew, self.read, self.xRead) or self.desc
+	self.desc = (self:getDesc(self.blew, self.read, self.xRead) or self.desc)
 	self.sellTime = self.dragged and self.sellTime or 0
 	Key.update(self, dt)
 	return self.toLeave
@@ -63,6 +63,10 @@ function SpecialKey:press()
 	app.addToInfoField(1, self.blew)
 	app.addToInfoField(2, self.read)
 	app.xToInfoField(2, self.xRead)
+end
+
+function SpecialKey:setHovered()
+	Key.setHovered(self, math.max(0, math.floor(self.cost/2)))
 end
 
 sellMessages = {

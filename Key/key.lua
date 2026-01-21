@@ -183,8 +183,9 @@ function Key:size()
 end
 
 -- Set hovered flag and play sfx if wasn't hovered before
-function Key:setHovered()
-	message.say(self.desc, "clippy", true)
+-- Takes a sell cost
+function Key:setHovered(sellCost)
+	message.say(self.desc..((sellCost and keyboard.rows[5]:full()) and " | Hold in place to sell for $"..sellCost or ""), "clippy", true)
 	if not self.hoveredLastFrame and not self.pressed then 
 		positionRatio = (self.x - self.row.x) / (self.row.w)
 		TEsound.play("SFX/Key/hover.mp3", "static", {}, .1, math.random()/2 + positionRatio/2 + .4)

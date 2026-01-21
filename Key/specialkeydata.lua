@@ -11,7 +11,7 @@ specialKeyData = {
 	-- 1: Hive key
 	{
 		name = "Hive key",
-		desc = "+2 read",
+		desc = "+2 read when pressed",
 		getDesc = function()
 			return nil
 		end,
@@ -26,7 +26,7 @@ specialKeyData = {
 	-- 2: Mint hive key
 	{
 		name = "Mint hive key",
-		desc = "+3 read if a 1 letter word is typed",
+		desc = "+3 read if a 1 letter word is typed when pressed",
 		getDesc = function()
 			return nil
 		end,
@@ -47,7 +47,7 @@ specialKeyData = {
 	-- 3: Pink hive key
 	{
 		name = "Pink hive key",
-		desc = "+3 read if a 2 letter word is typed",
+		desc = "+3 read if a 2 letter word is typed when pressed",
 		getDesc = function()
 			return nil
 		end,
@@ -68,7 +68,7 @@ specialKeyData = {
 	-- 4: Purple hive key
 	{
 		name = "Purple hive key",
-		desc = "+4 read if a 3 letter word is typed",
+		desc = "+4 read if a 3 letter word is typed when pressed",
 		getDesc = function()
 			return nil
 		end,
@@ -89,7 +89,7 @@ specialKeyData = {
 	-- 5: Brown hive key
 	{
 		name = "Brown hive key",
-		desc = "+4 read if a 4 letter word is typed",
+		desc = "+4 read if a 4 letter word is typed when pressed",
 		getDesc = function()
 			return nil
 		end,
@@ -110,7 +110,7 @@ specialKeyData = {
 	-- 6: Grey hive key
 	{
 		name = "Grey hive key",
-		desc = "x2 read if blew and read add up to less than 10",
+		desc = "x2 read if blew and read add up to less than 10 when pressed",
 		getDesc = function()
 			return nil
 		end,
@@ -129,9 +129,9 @@ specialKeyData = {
 	-- 7: Red hive key
 	{
 		name = "Red hive key",
-		desc = "+1 read for every 3 letter keys used this round",
+		desc = "+1 read for every 3 letter keys used this round when pressed",
 		getDesc = function()
-			return "Red hive key | +1 read for every 3 letter keys used this round (Current +"..math.floor(#keyboard.usedPile/3).." read)"
+			return "Red hive key | +1 read for every 3 letter keys used this round  when pressed (Currently +"..math.floor(#keyboard.usedPile/3).." read)"
 		end,
 		w = 50,
 		h = 50,
@@ -149,9 +149,9 @@ specialKeyData = {
 	-- 8: Blue hive key
 	{
 		name = "Blue hive key",
-		desc = "+1 blew for every 4 unused letter keys in the bag",
+		desc = "+1 blew for every 4 unused letter keys in the bag when pressed",
 		getDesc = function()
-			return "Blue hive key | +1 read for every 4 letter keys used this round (Current +"..math.floor(#keyboard.bagPile/4).." blew)"
+			return "Blue hive key | +1 read for every 4 letter keys used this round  when pressed (Currenty +"..math.floor(#keyboard.bagPile/4).." blew)"
 		end,
 		w = 50,
 		h = 50,
@@ -169,7 +169,7 @@ specialKeyData = {
 	-- 9: Gold hive key
 	{
 		name = "Gold hive key",
-		desc = "+$1",
+		desc = "+$1 when pressed",
 		getDesc = function()
 			return nil
 		end,
@@ -184,9 +184,9 @@ specialKeyData = {
 	-- 10: Green hive key
 	{
 		name = "Green hive key",
-		desc = "+5 blew for each empty shop slot",
+		desc = "+5 blew for each empty shop slot when pressed",
 		getDesc = function()
-			return "Green hive key | +5 blew for each empty shop slot (Currently +"..((4 - #shop.keys)*5).." blew)"
+			return "Green hive key | +5 blew for each empty shop slot when pressed (Currently +"..((4 - #shop.keys)*5).." blew)"
 		end,
 		w = 50,
 		h = 50,
@@ -204,7 +204,7 @@ specialKeyData = {
 	-- 11: Long hive key
 	{
 		name = "Long hive key",
-		desc = "x2 read",
+		desc = "x2 read when pressed",
 		getDesc = function()
 			return nil
 		end,
@@ -219,7 +219,7 @@ specialKeyData = {
 	-- 12: Joker
 	{
 		name = "Joker",
-		desc = "+4 read if there's a pressed A, K, Q or J letter key",
+		desc = "+4 read if there's a pressed A, K, Q or J letter key when pressed",
 		getDesc = function()
 			return nil
 		end,
@@ -241,9 +241,9 @@ specialKeyData = {
 	-- 13: Yin and yang
 	{
 		name = "Yin and yang",
-		desc = "If there are the same amount of vowels as consonants in letter keys pressed (>2 each), key gains +1 blew and +1 read",
+		desc = "Key gains +1 blew and +1 read if there are the same amount of vowels as consonants in letter keys pressed (>2 each) when pressed",
 		getDesc = function(self, blew, read)
-			return "Yin and yang | If there are the same amount of vowels as consonants in letter keys pressed (>2 each), key gains +1 blew and +1 read (Currently +"..blew.." blew +"..read.." read)"
+			return "Key gains +1 blew and +1 read if there are the same amount of vowels as consonants in letter keys pressed (>2 each) when pressed (Currently +"..blew.." blew +"..read.." read on press)"
 		end,
 		w = 50,
 		h = 50,
@@ -266,7 +266,7 @@ specialKeyData = {
 	-- 14: Eject button
 	{
 		name = "Eject button",
-		desc = "Uses a random available exchange. +20 blew",
+		desc = "Uses a random available exchange, then gives +20 blew when pressed",
 		getDesc = function(self, blew, read)
 			return nil
 		end,
@@ -294,7 +294,7 @@ specialKeyData = {
 	-- 15: Volume up key
 	{
 		name = "Volume up key",
-		desc = "+5 read if all exchanges are used",
+		desc = "+5 read if all exchanges are used when pressed",
 		getDesc = function(self, blew, read)
 			return nil
 		end,
@@ -312,7 +312,7 @@ specialKeyData = {
 	-- 16: Mute key
 	{
 		name = "Mute key",
-		desc = "+5 read if no exchanges are used",
+		desc = "+5 read if no exchanges are used when pressed",
 		getDesc = function(self, blew, read)
 			return nil
 		end,
@@ -330,7 +330,7 @@ specialKeyData = {
 	-- 17: Shuffle
 	{
 		name = "Shuffle",
-		desc = "Randomly shuffles positions of letter keys in rows that don't contain pressed letter keys",
+		desc = "Randomly shuffles positions of letter keys in rows that don't contain pressed letter keys when pressed",
 		getDesc = function(self, blew, read)
 			return nil
 		end,
@@ -356,9 +356,9 @@ specialKeyData = {
 	-- 18: TV Guide
 	{
 		name = "TV Guide",
-		desc = "Key gains blew equivillant to the sum of the numbers on owned number keys",
+		desc = "Key gains blew equivillant to the sum of the numbers on owned number keys when pressed",
 		getDesc = function(self, blew, read)
-			return "TV Guide | Gains blew equivillant to the sum of the numbers on owned number keys (Currently +"..blew.." blew)"
+			return "TV Guide | Key gains blew equivillant to the sum of the numbers on owned number keys when pressed (Currently +"..blew.." blew on press)"
 		end,
 		w = 50,
 		h = 50,
@@ -395,7 +395,7 @@ specialKeyData = {
 	-- 20: Calculate button
 	{
 		name = "Calculate button",
-		desc = "Gives number key of number equivilant to amount of function keys owned",
+		desc = "Gives number key of number equivilant to amount of function keys owned when pressed",
 		getDesc = function(self, blew, read)
 			return nil
 		end,
@@ -422,9 +422,9 @@ specialKeyData = {
 	-- 21: Bookmark
 	{
 		name = "Bookmark",
-		desc = "1/2 chance to give your last pressed function key",
+		desc = "1/2 chance to give your last pressed function key when pressed",
 		getDesc = function(self, blew, read)
-			return "Bookmark | 1/2 chance to give your last pressed function key ("..functionKeyData[lastPressedFunctionKey].name..")"
+			return "Bookmark | 1/2 chance to give your last pressed function key when pressed ("..functionKeyData[lastPressedFunctionKey].name..")"
 		end,
 		w = 50,
 		h = 50,
@@ -446,7 +446,7 @@ specialKeyData = {
 	-- 22: Cut
 	{
 		name = "Cut",
-		desc = "x2 read if typed word is also a word without its last letter",
+		desc = "x2 read if typed word is also a word without its last letter when pressed",
 		getDesc = function(self, blew, read)
 			return nil
 		end,
@@ -474,7 +474,7 @@ specialKeyData = {
 	-- 23: Seatbelt
 	{
 		name = "Seatbelt",
-		desc = "Unpresses all vowel keys",
+		desc = "Unpresses all vowel keys when pressed",
 		getDesc = function(self, blew, read)
 			return nil
 		end,
@@ -485,7 +485,7 @@ specialKeyData = {
 		ability = function()
 			local pressedLetterKeys = keyboard.getPressedLetterKeys()
 			for i, key in ipairs(pressedLetterKeys) do
-				if inList(vowels, key.letter) then
+				if inList(vowels, string.lower(key.letter)) then
 					key.pressed = false
 					key:bounce()
 				end
@@ -495,7 +495,7 @@ specialKeyData = {
 	-- 24: Elevator button
 	{
 		name = "Elevator button",
-		desc = "Moves pressed letter keys up a row (if there's good room above them)",
+		desc = "Moves pressed letter keys up a row (if there's good room above them) when pressed",
 		getDesc = function(self, blew, read)
 			return nil
 		end,
@@ -531,7 +531,7 @@ specialKeyData = {
 	-- 25: Cash register button
 	{
 		name = "Cash register button",
-		desc = "Gives $1 for every $25 you own",
+		desc = "Gives $1 for every $10 you own when pressed",
 		getDesc = function(self, blew, read)
 			return nil
 		end,
@@ -540,17 +540,17 @@ specialKeyData = {
 		cost = commonCost,
 		weight = commonWeight,
 		ability = function()
-			if shop.money < 25 then
+			if shop.money < 10 then
 				message.say("poor thing. literally", "idiot", false)
 				return
 			end
-			shop.giveMoney(math.max(0, math.floor(shop.money/25)))
+			shop.giveMoney(math.max(0, math.floor(shop.money/10)))
 		end
 	},
 	-- 26: Uno reverse
 	{
 		name = "Uno reverse",
-		desc = "Reverses positions of all keys",
+		desc = "Reverses positions of all keys when pressed",
 		getDesc = function(self, blew, read)
 			return nil
 		end,
@@ -567,7 +567,7 @@ specialKeyData = {
 	-- 27: Cart
 	{
 		name = "Cart",
-		desc = "Restocks shop with function keys",
+		desc = "Restocks shop with function keys when pressed",
 		getDesc = function(self, blew, read)
 			return nil
 		end,
@@ -585,7 +585,7 @@ specialKeyData = {
 	-- 28: Dice
 	{
 		name = "Dice",
-		desc = "1/4 chance to capitalize all letter keys on the keyboard",
+		desc = "1/4 chance to capitalize all letter keys on the keyboard when pressed",
 		getDesc = function(self, blew, read)
 			return nil
 		end,
@@ -606,7 +606,7 @@ specialKeyData = {
 	-- 29: Rose
 	{
 		name = "Rose",
-		desc = "+3 read for each pressed R, O, S or E key",
+		desc = "+3 read for each pressed R, O, S or E key when pressed",
 		getDesc = function(self, blew, read)
 			return nil
 		end,
@@ -623,14 +623,14 @@ specialKeyData = {
 			end
 			if string.lower(keyboard.getTypedWord()) == "rose" then
 				message.say("Cash shower for your flower power!", "clippy", false)
-				shop.giveMoney(5)
+				shop.giveMoney(10)
 			end
 		end
 	},
 	-- 30: Tulip
 	{
 		name = "Tulip",
-		desc = "+3 read for each pressed T, U, L, I or P key",
+		desc = "+3 read for each pressed T, U, L, I or P key when pressed",
 		getDesc = function(self, blew, read)
 			return nil
 		end,
@@ -647,14 +647,14 @@ specialKeyData = {
 			end
 			if string.lower(keyboard.getTypedWord()) == "tulip" then
 				message.say("Cash shower for your flower power!", "clippy", false)
-				shop.giveMoney(5)
+				shop.giveMoney(10)
 			end
 		end
 	},
 	-- 31: Lily
 	{
 		name = "Lily",
-		desc = "+20 blew for each pressed L key. +10 blew for each pressed I or Y key",
+		desc = "+20 blew for each pressed L key. +10 blew for each pressed I or Y key when pressed",
 		getDesc = function(self, blew, read)
 			return nil
 		end,
@@ -673,14 +673,14 @@ specialKeyData = {
 			end
 			if string.lower(keyboard.getTypedWord()) == "lily" then
 				message.say("Cash shower for your flower power!", "clippy", false)
-				shop.giveMoney(5)
+				shop.giveMoney(10)
 			end
 		end
 	},
 	-- 32: Mum
 	{
 		name = "Mum",
-		desc = "+20 blew for each pressed M key. +10 blew for each pressed U key",
+		desc = "+20 blew for each pressed M key. +10 blew for each pressed U key when pressed",
 		getDesc = function(self, blew, read)
 			return nil
 		end,
@@ -699,16 +699,16 @@ specialKeyData = {
 			end
 			if string.lower(keyboard.getTypedWord()) == "mum" then
 				message.say("Cash shower for your flower power!", "clippy", false)
-				shop.giveMoney(5)
+				shop.giveMoney(10)
 			end
 		end
 	},
 	-- 33: Thundercloud
 	{
 		name = "Thundercloud",
-		desc = "Key gains +5 blew if typed word ends in \"er\"",
+		desc = "Key gains +5 blew if typed word ends in \"er\" when pressed",
 		getDesc = function(self, blew, read)
-			return "Thundercloud | Key gains +5 blew if typed word ends in \"er\" (Currently +"..blew.." blew)"
+			return "Thundercloud | Key gains +5 blew if typed word ends in \"er\" when pressed (Currently +"..blew.." blew on press)"
 		end,
 		w = 50,
 		h = 50,
@@ -729,7 +729,7 @@ specialKeyData = {
 	-- 34: Detonate
 	{
 		name = "Detonate",
-		desc = "Destroys all letter keys on keyboard. Self destructs",
+		desc = "Destroys all letter keys on keyboard when pressed. Self destructs",
 		getDesc = function(self, blew, read)
 			return nil
 		end,
@@ -748,7 +748,7 @@ specialKeyData = {
 	-- 35: Melded hive key
 	{
 		name = "Melded hive key",
-		desc = "x3 read if there are two of the same letters pressed",
+		desc = "x3 read if there are two of the same letter keys pressed when pressed",
 		getDesc = function(self, blew, read)
 			return nil
 		end,
@@ -767,7 +767,7 @@ specialKeyData = {
 	-- 36: Kayak
 	{
 		name = "Kayak",
-		desc = "x2 read if typed word is a palindrome (must be >2 letters)",
+		desc = "x2 read if typed word is a palindrome (>2 letters) when pressed",
 		getDesc = function(self, blew, read)
 			return nil
 		end,
@@ -792,9 +792,9 @@ specialKeyData = {
 	-- 37: Matador cape
 	{
 		name = "Matador cape",
-		desc = "Key gains +1 read for each pressed function key",
+		desc = "Key gains +1 read for each pressed function key when pressed",
 		getDesc = function(self, blew, read)
-			return "Key gains +1 read for each pressed function key (Current +"..read.." read)"
+			return "Key gains +1 read for each pressed function key when pressed (Currently +"..read.." read on press)"
 		end,
 		w = 50,
 		h = 50,
@@ -814,7 +814,7 @@ specialKeyData = {
 	-- 38: Pride key
 	{
 		name = "Pride key",
-		desc = "+2 blew, read, purp and teel for each pressed L, G, B, T or Q key",
+		desc = "+2 blew, read, purp and teel for each pressed L, G, B, T or Q key when pressed",
 		getDesc = function(self, blew, read)
 			return nil
 		end,
@@ -842,7 +842,7 @@ specialKeyData = {
 	-- 39: Stamp
 	{
 		name = "Stamp",
-		desc = "Permanently increases pressed keys' base score by 2",
+		desc = "Permanently increases pressed letter keys' base score by 2 when pressed",
 		getDesc = function(self, blew, read)
 			return nil
 		end,
@@ -862,7 +862,7 @@ specialKeyData = {
 	-- 40: Bullseye
 	{
 		name = "Bullseye",
-		desc = "Permanently adds +1 read to pressed keys based on how far their letters are from the end of typed word (e.x. typing \"kayak\" would give both a's +1 read and the y +2 read)",
+		desc = "Permanently adds read to pressed letter keys based on how far their letters are from the end of typed word when pressed (e.x. \"kayak\" would give both a keys +1 read and the y key +2 read)",
 		getDesc = function(self, blew, read)
 			return nil
 		end,
@@ -892,9 +892,9 @@ specialKeyData = {
 	-- 41: Ring
 	{
 		name = "Ring",
-		desc = "Key gains x0.25 read if typed word ends in \"ng\"",
+		desc = "Key gains x0.25 read if typed word ends in \"ng\" when pressed",
 		getDesc = function(self, blew, read, xRead)
-			return "Ring | Key gains x0.25 read if typed word ends in \"ng\" (Currently x"..xRead.." read)"
+			return "Ring | Key gains x0.25 read if typed word ends in \"ng\" when pressed (Currently x"..xRead.." read on press)"
 		end,
 		w = 50,
 		h = 50,
@@ -916,7 +916,7 @@ specialKeyData = {
 	-- 42: Microwave button
 	{
 		name = "Microwave button",
-		desc = "Creates a random function key",
+		desc = "Creates a random function key when pressed",
 		getDesc = function(self, blew, read, xRead)
 			return nil
 		end,
@@ -944,7 +944,7 @@ specialKeyData = {
 	-- 43: Capital
 	{
 		name = "Capital",
-		desc = "Creates a SHIFT key if most keyboard keys are lowercase, or a CAPS key if most keyboard keys are uppercase",
+		desc = "Creates a SHIFT key when pressed if most keyboard keys are lowercase, or a CAPS key if most keyboard keys are uppercase",
 		getDesc = function(self, blew, read, xRead)
 			return nil
 		end,
@@ -970,9 +970,9 @@ specialKeyData = {
 	-- 44: Bubblewrap
 	{
 		name = "Bubblewrap",
-		desc = "Key gains x0.01 read for each key pressed",
+		desc = "Key gains x0.01 read for each key pressed when pressed",
 		getDesc = function(self, blew, read, xRead)
-			return "Bubblewrap | Key gains x0.01 read for each key pressed (Currently x"..xRead.." read)"
+			return "Bubblewrap | Key gains x0.01 read for each key pressed when pressed (Currently x"..xRead.." read on press)"
 		end,
 		w = 50,
 		h = 50,
@@ -1010,7 +1010,7 @@ specialKeyData = {
 	-- 46: Squish button
 	{
 		name = "Squish button",
-		desc = "Squishes as many letter keys as possible into rows (that don't have pressed keys)",
+		desc = "Squishes as many letter keys as possible into rows (that don't have pressed keys) when pressed",
 		getDesc = function(self, blew, read, xRead)
 			return nil
 		end,
@@ -1027,7 +1027,7 @@ specialKeyData = {
 		name = "Honk",
 		desc = "Key gains x0.25 read when honked. Scares away random amount of function and letter keys",
 		getDesc = function(self, blew, read, xRead)
-			return "Honk | Key gains x0.25 read when honked. Scares away random amount of function and letter keys (Currently x"..xRead.." read)"
+			return "Honk | Key gains x0.25 read when honked. Scares away random amount of function and letter keys (Currently x"..xRead.." read on honk)"
 		end,
 		w = 50,
 		h = 50,
@@ -1055,7 +1055,7 @@ specialKeyData = {
 		name = "Bridge",
 		desc = "Key gains +4 blew if a pressed key is touching the left edge. Gains +2 read if a pressed key is touching the right edge",
 		getDesc = function(self, blew, read, xRead)
-			return "Bridge | Key gains +4 blew if a pressed key is touching the left edge. Gains +2 read if a pressed key is touching the right edge (Currently +"..blew.." blew +"..read.." read)"
+			return "Bridge | Key gains +4 blew if a pressed key is touching the left edge when pressed. Gains +2 read if a pressed key is touching the right edge when pressed (Currently +"..blew.." blew +"..read.." read on press)"
 		end,
 		w = 100,
 		h = 50,
@@ -1077,7 +1077,7 @@ specialKeyData = {
 	-- 49: Crowbar
 	{
 		name = "Crowbar",
-		desc = "Unpresses closest special key (left key if touching two). Swaps position of crowbar and space key if closest key is the space key",
+		desc = "Unpresses closest special key when pressed (left key if touching two). Swaps position of crowbar and space key if closest key is the space key",
 		getDesc = function(self, blew, read, xRead)
 			return nil
 		end,
@@ -1126,7 +1126,7 @@ specialKeyData = {
 	-- 50: Radio
 	{
 		name = "Radio",
-		desc = "+5 read for each pressed letter key of a randomly given pool of letters (letters change every round)",
+		desc = "+5 read for each pressed letter key of a randomly given pool of letters when pressed (letters change every round)",
 		getDesc = function(self, blew, read, xRead)
 			local letterText = ""
 			for i, letter in ipairs(radioLetters) do

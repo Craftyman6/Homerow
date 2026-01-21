@@ -32,11 +32,11 @@ bluescreen = {
 		rect(center.x - 48, bluescreen.y + 40, 93, 26, {1,1,1})
 		text("BumbleOS", center.x - 46, bluescreen.y + 41, 20, bluescreen.backgroundCol)
 		-- Desc
-		text((app.won and "A critical" or "An").." error has occured. To continue:\n\nPress CTRL + ALT + DEL to restart your computer.\nIf you do this, data in any open applications may\nbe lost.\n\n"..
+		text((app.won and "A critical" or "An").." error has occured. To continue:\n\nPress CTRL + ALT + DEL (any order) to restart your\ncomputer. If you do this, data in any open applications\nmay be lost.\n\n"..
 			"Error information:\n"..
 			"Round reached: "..(app.round == 9 and "You won!" or app.round).."\n"..
 			"Keys pressed: "..app.keysPressed.."\n"..
-			"Highed scoring word: "..(app.highscore.hasOne and ("\""..app.highscore.word.."\" with "..math.floor(app.highscore.score).." points") or "No score"), bluescreen.x + 8, bluescreen.y + 90, 15, {1,1,1})
+			"Highest scored word: "..(app.highscore.hasOne and ("\""..app.highscore.word.."\" with "..math.floor(app.highscore.score).." points") or "No score"), bluescreen.x + 8, bluescreen.y + 90, 15, {1,1,1})
 	end
 }
 

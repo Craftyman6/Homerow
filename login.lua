@@ -66,6 +66,10 @@ login = {
 		login.next.y = login.y + login.h - 18
 		login.next.w = 30
 		login.next.h = 16
+		login.maximize.x = login.x + login.w - 40
+		login.maximize.y = login.y + 50
+		login.maximize.w = 32
+		login.maximize.h = 32
 		login.next.active = false
 		--keyboard.giveTutorialKeys()
 	end,
@@ -75,6 +79,7 @@ login = {
 	divLineLength = 60,
 	borderStripCol = {0, 0.169, 0.573},
 	borderLineCols = {{0.6, 0.729, 0.984}, {1, 0.686, 0.349}},
+	maximizeImgs = {love.graphics.newImage("IMG/Login/large.png"), love.graphics.newImage("IMG/Login/small.png")},
 	borderH = 40,
 	flowerImg = love.graphics.newImage("IMG/Login/flower.png"),
 	flowerSize = .7,
@@ -83,6 +88,7 @@ login = {
 	user = {},
 	pass = {},
 	next = {},
+	maximize = {},
 	stage = 1,
 	tries = 1,
 	done = false,
@@ -118,6 +124,8 @@ login = {
 		if login.done then return true end
 		-- Decide if next button should be shown
 		login.next.active = login.chosen and not login.spaceKeyGiven
+		-- Maximize clickable
+		cursor.addMonitorClickable(login.maximize.x, login.maximize.y, login.maximize.w, login.maximize.h, "", function() changeWindowS() end)
 		-- Add user clickable if not clicked yet (return if so)
 		if not login.chosen then
 			cursor.addMonitorClickable(login.user.x, login.user.y, login.user.w, login.user.h, "", function()
@@ -182,6 +190,8 @@ login = {
 			rectLine(login.next.x, login.next.y, login.next.w, login.next.h, {0,0,0})
 			text("Next", login.next.x + 2, login.next.y, 12, {0,0,0})
 		end
+		-- Maximize
+		img(login.maximizeImgs[math.floor(windowS*1.5)], login.maximize.x, login.maximize.y, 0, .5)
 	end
 }
 
